@@ -1,15 +1,9 @@
-import pyttsx3
 from django.shortcuts import render
 
-def talk(word):
- engine = pyttsx3.init()
- engine.say(word)
- engine.runAndWait()
 
 def home(reguest):
 	if reguest.method == "POST":
 		kabzon = reguest.POST['flint']
-		talk(kabzon)
 		return render(reguest , 'home.html' , {'zaporoj' : kabzon})
 
 	else :
