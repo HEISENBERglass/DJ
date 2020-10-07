@@ -26,7 +26,6 @@ PyGetWindow==0.0.8
 pyjsparser==2.7.1
 pylint==2.6.0
 PyMsgBox==1.0.8
-pynput==1.7.1
 pyparsing==2.4.7
 pyperclip==1.8.0
 PyPrind==2.11.2
