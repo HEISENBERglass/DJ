@@ -1,7 +1,8 @@
 from django.shortcuts import render
 marsoxod2 = "bartsucks"
 def home(reguest):
-
+	if 1==1:
+		pass
 	return render(reguest , 'home.html' , {'zaporoj' : marsoxod2})
 		
 
