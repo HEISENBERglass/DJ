@@ -1,8 +1,6 @@
 from django.shortcuts import render
 marsoxod2 = "bartsucks"
 def home(reguest):
-	if reguest.method == "POST":
-		kabzon = reguest.POST['flint']
 		return render(reguest , 'home.html' , {'zaporoj' : marsoxod2})
 		
 
