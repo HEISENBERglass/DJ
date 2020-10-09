@@ -1,16 +1,8 @@
 from django.shortcuts import render
-
-
-class FOG():
-	marsoxod2 = "madison square qarden"
-
-
-
-
+marsoxod2 = "bartsucks"
 def home(reguest):
 	if reguest.method == "POST":
 		kabzon = reguest.POST['flint']
-		man = marsoxod2
 		return render(reguest , 'home.html' , {'zaporoj' : marsoxod2})
 		
 
