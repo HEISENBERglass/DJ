@@ -1,8 +1,8 @@
 from django.shortcuts import render
 marsoxod2 = "bartsucks"
 def home(reguest):
-		if reguest.method == "POST":
-		return render(reguest , 'home.html' , {'zaporoj' : marsoxod2})
+
+	return render(reguest , 'home.html' , {'zaporoj' : marsoxod2})
 		
 
 	else :
