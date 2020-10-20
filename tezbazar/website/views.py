@@ -1,7 +1,9 @@
 from django.shortcuts import render
 marsoxod2 = "bartsucks"
 def home(reguest):
-		dormamu = "asdasdadsasdasdasdasdasdasdasdadas"
+		man = open("textdottext.txt" , "r")
+		queen = man.read()
+		dormamu = queen
 		return render(reguest , 'home.html' , {'zaporoj' : dormamu})
 
 def blog(reguest1):
