@@ -49,10 +49,7 @@ def contact(reguest5):
 		name = reguest5.POST['Name']
 		price = reguest5.POST['Price']
 		desc = reguest5.POST['Description']
-		DataHolder.name = name
-		DataHolder.price = price
-		DataHolder.description = desc
-		search = (DataHolder)
+		search = Adverts(name,price,desc)
 		namelist.append(search)
 		pricelist.append(name)
 
