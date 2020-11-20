@@ -30,10 +30,13 @@ def blog(reguest1):
 	return render(reguest1, 'blog.html', {})
 
 def shopdet(reguest2 , namus , prius , descus):
+
+	DataHolder.name=namus
+	DataHolder.price=prius
+	DataHolder.description=descus
 	var = DataHolder
-	var.name = namus
-	var.price = prius
-	var.description = descus
+
+
 	return render(reguest2, 'shopdet.html' , {'var' : var})
 
 def shopdet2(reguest3):
