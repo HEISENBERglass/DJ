@@ -16,10 +16,12 @@ def home(reguest):
 	if reguest.method == "POST" :
 		prname = reguest.POST['flint']
 		try:
-			indexOf = pricelist.index(prname)
+			if prname in pricelist:
+				indexOf = pricelist.index(prname)
 
-			return shopdet(reguest ,namus=namelist[indexOf].name,prius=namelist[indexOf].price,descus=namelist[indexOf].description)
-
+				return shopdet(reguest ,namus=namelist[indexOf].name,prius=namelist[indexOf].price,descus=namelist[indexOf].description)
+			else:
+				return shopdet(reguest,namus="lox",prius="ti",descus="ne smoq")
 		except ValueError :
 			return render(reguest , 'contact.html' , {})
 	else :
@@ -55,7 +57,6 @@ def contact(reguest5):
 		search = Adverts(name,price,desc)
 		namelist.append(search)
 		pricelist.append(name)
-
 
 	return render(reguest5, 'contact.html' , {})
 
