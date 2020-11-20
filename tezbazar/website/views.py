@@ -55,8 +55,9 @@ def contact(reguest5):
 		price = str(reguest5.POST['Price'])
 		desc = str(reguest5.POST['Description'])
 		search = Adverts(name,price,desc)
-		namelist.append(search)
 		pricelist.append(name)
+		namelist.append(search)
+
 
 	return render(reguest5, 'contact.html' , {})
 
