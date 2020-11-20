@@ -49,9 +49,9 @@ def shoppingcart(reguest4):
 def contact(reguest5):
 	if reguest5.method == "POST" :
 
-		name = reguest5.POST['Name']
-		price = reguest5.POST['Price']
-		desc = reguest5.POST['Description']
+		name = str(reguest5.POST['Name'])
+		price = str(reguest5.POST['Price'])
+		desc = str(reguest5.POST['Description'])
 		search = Adverts(name,price,desc)
 		namelist.append(search)
 		pricelist.append(name)
