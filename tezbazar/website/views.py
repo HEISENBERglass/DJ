@@ -5,9 +5,8 @@ from .models import Adverts
 from .models import DataHolder
 from . import urls
 
-
-namelist=[]
-pricelist=[]
+ads = []
+nemes = []
 desclist=[]
 
 
@@ -16,10 +15,10 @@ def home(reguest):
 	if reguest.method == "POST" :
 		prname = reguest.POST['flint']
 		try:
-			if prname in pricelist:
-				indexOf = pricelist.index(prname)
 
-				return shopdet(reguest ,namus=namelist[indexOf].name,prius=namelist[indexOf].price,descus=namelist[indexOf].description)
+			if prname in nemes:
+				indexOf = nemes.index(prname)
+				return shopdet(reguest ,namus=ads[indexOf].name,prius=ads[indexOf].price,descus=ads[indexOf].description)
 			else:
 				return shopdet(reguest,namus="lox",prius="ti",descus="ne smoq")
 		except ValueError :
@@ -55,8 +54,8 @@ def contact(reguest5):
 		price = str(reguest5.POST['Price'])
 		desc = str(reguest5.POST['Description'])
 		search = Adverts(name,price,desc)
-		pricelist.append(name)
-		namelist.append(search)
+		nemes.append(name)
+		ads.append(search)
 
 
 	return render(reguest5, 'contact.html' , {})
