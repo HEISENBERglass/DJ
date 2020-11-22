@@ -13,13 +13,12 @@ desclist=[]
 def home(reguest):
 
 	if reguest.method == "POST" :
-		prname = reguest.POST['flint']
+		zapros = reguest.POST['flint']
 		try:
-
-			if prname in nemes:
-				indexOf = nemes.index(prname)
-				return shopdet(reguest ,namus=ads[indexOf].name,prius=ads[indexOf].price,descus=ads[indexOf].description)
-			else:
+			if zapros in nemes :
+				index = nemes.index(zapros)
+				return shopdet(reguest,namus=ads[index].name,prius=ads[index].price,descus=ads[index].description)
+			else: 
 				return shopdet(reguest,namus="lox",prius="ti",descus="ne smoq")
 		except ValueError :
 			return render(reguest , 'contact.html' , {})
@@ -54,10 +53,8 @@ def contact(reguest5):
 		price = str(reguest5.POST['Price'])
 		desc = str(reguest5.POST['Description'])
 		search = Adverts(name,price,desc)
-		nemes.append(name)
+		blitz = nemes.append(name)
 		ads.append(search)
-
-
 	return render(reguest5, 'contact.html' , {})
 
 
