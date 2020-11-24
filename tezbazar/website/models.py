@@ -1,5 +1,6 @@
 from django.db import models
 
+ALLtheAds = []
 
 class Adverts:
 	def __init__(self,name,price,description):
@@ -11,3 +12,4 @@ class DataHolder:
 	name: str
 	price: str
 	description : str
+

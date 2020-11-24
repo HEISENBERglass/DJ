@@ -3,10 +3,11 @@ from django.urls import path
 import os
 from .models import Adverts
 from .models import DataHolder
+from .models import ALLtheAds
 from . import urls
 
 ads = []
-nemes = []
+
 desclist=[]
 
 
@@ -15,8 +16,8 @@ def home(reguest):
 	if reguest.method == "POST" :
 		zapros = reguest.POST['flint']
 		try:
-			if zapros in nemes :
-				index = nemes.index(zapros)
+			if zapros in ALLtheAds :
+				index = ALLtheAds.index(zapros)
 				return shopdet(reguest,namus=ads[index].name,prius=ads[index].price,descus=ads[index].description)
 			else: 
 				return shopdet(reguest,namus="lox",prius="ti",descus="ne smoq")
@@ -53,7 +54,7 @@ def contact(reguest5):
 		price = str(reguest5.POST['Price'])
 		desc = str(reguest5.POST['Description'])
 		search = Adverts(name,price,desc)
-		blitz = nemes.append(name)
+		blitz = ALLtheAds.append(name)
 		ads.append(search)
 	return render(reguest5, 'contact.html' , {})
 
