@@ -1,6 +1,7 @@
 from django.db import models
 
-ALLtheAds = []
+adviyats=[]
+
 
 class Adverts:
 	def __init__(self,name,price,description):

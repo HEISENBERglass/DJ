@@ -3,8 +3,8 @@ from django.urls import path
 import os
 from .models import Adverts
 from .models import DataHolder
-from .models import ALLtheAds
 from . import urls
+import pickle
 
 ads = []
 
@@ -15,14 +15,13 @@ def home(reguest):
 
 	if reguest.method == "POST" :
 		zapros = reguest.POST['flint']
-		try:
-			if zapros in ALLtheAds :
-				index = ALLtheAds.index(zapros)
-				return shopdet(reguest,namus=ads[index].name,prius=ads[index].price,descus=ads[index].description)
-			else: 
-				return shopdet(reguest,namus="lox",prius="ti",descus="ne smoq")
-		except ValueError :
-			return render(reguest , 'contact.html' , {})
+		f = open("dict.pickle" , "rb")
+		gerald = pickle.load(f)
+		dorime = gerald.name
+		dorime2 = gerald.price
+		dorime3 = gerald.description
+		return shopdet(reguest2=reguest ,namus=dorime,prius=dorime2,descus=dorime3)
+		
 	else :
 		return render(reguest , 'home.html' , {})
 
@@ -49,14 +48,16 @@ def shoppingcart(reguest4):
 
 def contact(reguest5):
 	if reguest5.method == "POST" :
-
 		name = str(reguest5.POST['Name'])
 		price = str(reguest5.POST['Price'])
 		desc = str(reguest5.POST['Description'])
-		search = Adverts(name,price,desc)
-		blitz = ALLtheAds.append(name)
-		ads.append(search)
-	return render(reguest5, 'contact.html' , {})
+		chopin = Adverts(name,price,desc)
+		sakar = open("dict.pickle" , "wb")
+		pickle.dump(chopin , sakar)
+		return render(reguest5 , 'contact.html' , {})
+
+	else:
+		return render(reguest5, 'contact.html' , {})
 
 
 

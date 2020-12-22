@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from . import models
 
 
 
@@ -12,7 +13,8 @@ urlpatterns = [
 	path('shopdet.html', views.shopdet , name='shopdet'),
 	path('shopdet2.html', views.shopdet2 , name='shopdet2'),
 	path('shoppingcart.html' , views.shoppingcart , name='shoppingcart'),
-	path('contact.html' , views.contact , name='contact')
+	path('contact.html' , views.contact , name='contact'),
+
 
 
  
