@@ -14,6 +14,9 @@ urlpatterns = [
 	path('shopdet2.html', views.shopdet2 , name='shopdet2'),
 	path('shoppingcart.html' , views.shoppingcart , name='shoppingcart'),
 	path('contact.html' , views.contact , name='contact'),
+	path('login.html' , views.login , name='login'),
+	path('login1.html' , views.login1 , name='login1'),
+
 
 
 
