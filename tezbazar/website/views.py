@@ -93,7 +93,7 @@ def login(reguest):
 		return login1(reguest)
 			
 	else:
-		return render(reguest , 'login.html' , {})
+		return render(reguest , "login.html" , {})
 
 def login1(reguest):
 	return render(reguest , 'login1.html' , {})
